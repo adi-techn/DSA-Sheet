@@ -1,0 +1,23 @@
+package DSA_Sheet.Day_06;
+
+import java.util.HashMap;
+
+public class validAnagram {
+     public static boolean anagram(String s,String t){
+          HashMap<Character,Integer> hm1=new HashMap<>();
+          HashMap<Character,Integer> hm2=new HashMap<>();
+
+          for(int i=0;i<s.length();i++){
+               hm1.put(s.charAt(i),hm1.getOrDefault(s.charAt(i),0)+1);
+          }
+          for(int i=0;i<t.length();i++){
+               hm2.put(t.charAt(i),hm2.getOrDefault(t.charAt(i),0)+1);
+          }
+
+          return hm1.equals(hm2);
+     }
+     public static void main(String[] args) {
+          String s="anagram", t="nagaram";
+          System.out.println(anagram(s, t));
+     }
+}
